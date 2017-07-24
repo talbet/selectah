@@ -1,0 +1,9 @@
+{
+  "path": "./src/components",
+  "jsExtension": "js",
+  "cssExtension": "css",
+  "includeTests": true,
+  "includeStories": true,
+  "indexFile": true,
+  "connected": false
+}
