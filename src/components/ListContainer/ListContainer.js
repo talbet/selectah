@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import styles from './ListContainer.css';
 import data from '../../data/data.json';
 import List from '../List';
+import keyIndex from '../../utils/keyIndex';
+
+const dataWithIds = keyIndex(data);
 
 class ListContainer extends Component {
   constructor(props) {
@@ -14,7 +17,7 @@ class ListContainer extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <List items={data} />
+        <List items={dataWithIds} />
       </div>
     );
   }

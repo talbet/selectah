@@ -9,22 +9,33 @@
   "scripts": {
     "start": "neutrino start",
     "build": "neutrino build",
-    "test": "neutrino test"
+    "test": "neutrino test",
+    "watch": "neutrino test --watch"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "hashids": "^1.1.1",
+    "lodash": "^4.17.4",
     "neutrino-middleware-postcss": "next",
+    "object-hash": "^1.1.8",
     "prop-types": "^15.5.10",
+    "quick-hash": "^1.0.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-hot-loader": "next"
+    "react-hot-loader": "next",
+    "react-inlinesvg": "^0.6.2",
+    "react-key-index": "^0.1.1",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "enzyme": "^2.9.1",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
+    "jest": "^20.0.4",
     "neutrino": "^6.1.4",
     "neutrino-middleware-eslint": "^6.1.4",
     "neutrino-middleware-style-loader": "^6.1.4",

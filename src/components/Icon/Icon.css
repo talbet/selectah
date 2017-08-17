@@ -1,0 +1,10 @@
+.container {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: .5rem;
+}
+
+.container svg {
+  height: 10px;
+  width: auto;
+}
