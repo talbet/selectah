@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Heading from './Heading';
+import ListItem from './ListItem';
 
-describe('Heading', () => {
-  let component;
-  let props;
+describe('ListItem', () => {
+  let component,
+    props;
 
   beforeEach(() => {
     props = {};
-    component = shallow(<Heading {...props} />);
+    component = shallow(<ListItem {...props} />);
   });
 
   it('should', () => {

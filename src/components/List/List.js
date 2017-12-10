@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './List.css';
-import ListItem from '../ListItem';
+import ListItem from 'components/ListItem';
 
 const List = ({ items }) => (
-  <div className={styles.container}>
-    <ul className={styles.list}>
+  <div>
+    <ul>
       {items.map(item => <ListItem key={item.id} {...item} />)}
     </ul>
   </div>
-  );
+);
 
 List.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      image: PropTypes.string,
-      icon: PropTypes.string,
-    }),
-  ).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    icon: PropTypes.string,
+  })).isRequired,
 };
 
 List.defaultProps = {};

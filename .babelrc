@@ -3,6 +3,12 @@
   "plugins": [
     "babel-plugin-styled-components",
     "transform-object-rest-spread",
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
   ]
 }

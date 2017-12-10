@@ -1,19 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
-import Text from '../Text';
-import styles from './ListItem.css';
+import styled from 'styled-components';
+import styledBy from 'styled-by';
+import { color } from 'styles/variables';
+import Icon from 'components/Icon';
+import Text from 'components/Text';
 
-const ListItem = ({ name }) =>
-  (<li className={styles.listItem}>
+const Item = styled.li`
+  ${styledBy('active', `background: ${color.secondary};`)};
+`;
+
+const ListItem = ({ name, active }) => (
+  <Item active={active}>
     <Icon name="dot" />
-    <Text info>{name}</Text>
-  </li>);
+    <Text>{name}</Text>
+  </Item>
+);
 
 ListItem.propTypes = {
   name: PropTypes.string.isRequired,
+  active: PropTypes.bool,
 };
 
-ListItem.defaultProps = {};
+ListItem.defaultProps = {
+  active: false,
+};
 
 export default ListItem;

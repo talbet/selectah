@@ -9,5 +9,10 @@
     "semi": "error",
     "react/jsx-filename-extension": "off",
     "no-underscore-dangle": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }

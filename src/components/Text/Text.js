@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import styledBy from 'styled-by';
 import includes from 'lodash/includes';
-import { color }from '../../styles/variables';
+import { color } from 'styles/variables';
 
 const BaseText = styled.span`
   ${styledBy({
