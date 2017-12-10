@@ -19,8 +19,8 @@ coverage
 .idea/
 .tags
 .cache
-.dist
 .eslintcache
+dist
 node_modules/
 .DS_Store
 Thumbs.db
