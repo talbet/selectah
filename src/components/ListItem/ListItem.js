@@ -12,7 +12,7 @@ const Item = styled.li`
 
 const ListItem = ({ name, active }) => (
   <Item active={active}>
-    <Icon name="dot" />
+    <Icon name="arrowRight" />
     <Text>{name}</Text>
   </Item>
 );

@@ -1,17 +1,18 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+import React from 'react';
+import { shallow } from 'enzyme';
 
-import Button from './Button'
+import Button from './Button';
 
 describe('Button', () => {
-  let component, props
+  let component;
+  let props;
 
   beforeEach(() => {
-    props = {}
-    component = shallow(<Button {...props} />)
-  })
+    props = {};
+    component = shallow(<Button {...props} />);
+  });
 
   it('should', () => {
-    expect(component).toMatchSnapshot()
-  })
-})
+    expect(component).toMatchSnapshot();
+  });
+});
