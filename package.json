@@ -7,42 +7,40 @@
     "node": ">=6.9"
   },
   "scripts": {
-    "start": "neutrino start",
-    "build": "neutrino build",
-    "test": "neutrino test",
-    "watch": "neutrino test --watch"
+    "start": "parcel src/index.html",
+    "lint": "eslint . --cache --fix",
+    "pretest": "npm run lint",
+    "format": "prettier --write '**/*.{js,css,md}'",
+    "posttest": "npm run format"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "hashids": "^1.1.1",
     "lodash": "^4.17.4",
-    "neutrino-middleware-postcss": "next",
     "object-hash": "^1.1.8",
     "prop-types": "^15.5.10",
     "quick-hash": "^1.0.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-hot-loader": "next",
-    "react-inlinesvg": "^0.6.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-inlinesvg": "^0.7.4",
     "react-key-index": "^0.1.1",
     "shortid": "^2.2.8"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "enzyme": "^2.9.1",
-    "eslint-config-airbnb": "^15.0.2",
-    "eslint-config-airbnb-base": "^11.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react-app": "^3.1.0",
+    "enzyme": "^3.2.0",
+    "eslint": "^4.13.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
-    "jest": "^20.0.4",
-    "neutrino": "^6.1.4",
-    "neutrino-middleware-eslint": "^6.1.4",
-    "neutrino-middleware-style-loader": "^6.1.4",
-    "neutrino-middleware-styles-loader": "^0.0.5",
-    "neutrino-preset-airbnb-base": "^6.1.4",
-    "neutrino-preset-jest": "^6.1.4",
-    "neutrino-preset-react": "^6.1.4",
-    "postcss-simple-vars": "^4.0.0"
+    "jest": "^21.2.1",
+    "parcel-bundler": "^1.1.0",
+    "prettier": "^1.9.1",
+    "react-hot-loader": "^3.1.3"
   }
 }

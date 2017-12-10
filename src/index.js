@@ -1,3 +1,4 @@
+require('react-hot-loader/patch');
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
@@ -8,12 +9,7 @@ const load = () =>
     <AppContainer>
       <App />
     </AppContainer>,
-    document.getElementById('root'),
+    document.getElementById('root')
   );
-
-// This is needed for Hot Module Replacement
-if (module.hot) {
-  module.hot.accept('./App', load);
-}
 
 load();
