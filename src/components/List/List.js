@@ -9,7 +9,7 @@ const List = ({ items, selected }) => (
       {items.map((item, i) => (
         <ListItem
           key={item.id}
-          active={i === selected}
+          active={i === selected % items.length}
           {...item}
         />
       ))}
