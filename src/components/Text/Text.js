@@ -83,6 +83,7 @@ const validTags = ['span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 const Text = ({ children, format, tag }) => {
   const validTag = includes(validTags, tag) ? tag : 'span';
   const TaggedText = BaseText.withComponent(validTag);
+  // const TaggedText = BaseText;
   return <TaggedText format={format}>{children}</TaggedText>;
 };
 

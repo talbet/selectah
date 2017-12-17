@@ -1,6 +1,8 @@
 export const color = {
   primary: '#761ed6',
   secondary: '#c390fc',
+  background: '#fee4dd',
+  white: '#fafafa',
   blue: '#056ef0',
   gray10: 'hsl(0, 0%, 10%)',
   gray30: 'hsl(0, 0%, 30%)',
