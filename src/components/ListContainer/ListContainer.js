@@ -42,8 +42,9 @@ class ListContainer extends Component {
   handleResetTimer() {
     this.progressBar.innerComponent.handleRestart();
     const { progress } = this.progressBar.innerComponent.state;
-    const newSelection = Math.random() * 30 + 50;
-    this.props.setSelection(newSelection);
+    const minimumRotation = data.length * 5;
+    const newSelection = Math.round(Math.random() * (data.length * 3));
+    this.props.setSelection(minimumRotation + newSelection);
     this.setState({ timer: MAX_TIME, progress });
   }
 

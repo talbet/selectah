@@ -9,9 +9,21 @@
     "name": "Pizza"
   },
   {
-    "name": "Japanese"
+    "name": "Sushi"
   },
   {
     "name": "Burgers"
+  },
+  {
+    "name": "Korean BBQ"
+  },
+  {
+    "name": "Curry"
+  },
+  {
+    "name": "Ramen"
+  },
+  {
+    "name": "Okonomiyaki"
   }
 ]
