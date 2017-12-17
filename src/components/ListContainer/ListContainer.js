@@ -4,6 +4,7 @@ import Button from 'components/Button';
 import ProgressBar from 'components/ProgressBar';
 import data from 'data/data.json';
 import keyIndex from 'utils/keyIndex';
+import { easeOut } from 'utils/easing';
 
 import { setTime, setSelection } from 'redux/selectah/actions';
 import { connect } from 'react-redux';
@@ -15,6 +16,16 @@ const MAX_TIME = 200;
 const advanceSelection = (chance) => {
   const rnd = Math.random() * 100;
   return rnd < chance;
+};
+
+const easing = easeOut(2);
+
+const convertTimeRemainingToFraction = time => Math.abs(100 - time) / 100;
+
+const animatedSelection = (time, selection) => {
+  const easedTime = easing(convertTimeRemainingToFraction(time));
+  const easedSelection = easedTime * selection;
+  return Math.round(easedSelection);
 };
 
 class ListContainer extends Component {
@@ -31,19 +42,17 @@ class ListContainer extends Component {
   handleResetTimer() {
     this.progressBar.innerComponent.handleRestart();
     const { progress } = this.progressBar.innerComponent.state;
+    const newSelection = Math.random() * 30 + 50;
+    this.props.setSelection(newSelection);
     this.setState({ timer: MAX_TIME, progress });
   }
 
   handleTick(percentageRemaining) {
     this.props.setTime(percentageRemaining);
-
-    if (advanceSelection(percentageRemaining)) {
-      const newSelection = this.props.selection + 1;
-      this.props.setSelection(newSelection);
-    }
   }
 
   render() {
+    const { selection, time } = this.props;
     return (
       <div>
         <ProgressBar
@@ -53,7 +62,10 @@ class ListContainer extends Component {
             this.progressBar = node;
           }}
         />
-        <List items={dataWithIds} selected={this.props.selection} />
+        <List
+          items={dataWithIds}
+          selected={animatedSelection(time, selection)}
+        />
         <p>{this.state.timer}</p>
         <p>{this.state.progress}</p>
         <Button onClick={this.handleResetTimer}>Spin</Button>
@@ -64,6 +76,7 @@ class ListContainer extends Component {
 
 const mapStateToProps = state => ({
   selection: state.selectah.selection,
+  time: state.selectah.time,
 });
 
 const mapDispatchToProps = dispatch => ({
